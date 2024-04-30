@@ -42,6 +42,11 @@ resource "aws_instance" "app_server_[YOUR_NAME]" {
     Name = "my-terraform-demo-[YOUR_NAME]"
   }
 }
+
+output "instance_ip_address" {
+  description = "The public IP address of the instance"
+  value       = aws_instance.app_server_[YOUR_NAME].public_ip
+}
 ```
 
 3. In the directory, run the command `terraform init`
