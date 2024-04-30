@@ -23,3 +23,8 @@ resource "aws_instance" "app_server_[YOUR_NAME]" {
     #Name = var.instance_name
   }
 }
+
+output "instance_ip_address" {
+  description = "The public IP address of the instance"
+  value       = aws_instance.app_server_[YOUR_NAME].public_ip
+}
